@@ -24,6 +24,7 @@ get_header();
                         <?php velocity_post_loop('',470,420);?>
                     <?php endwhile; ?>
                 </div>
+		<?php justg_pagination();?>
 			<?php else : ?>
 				<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 			<?php endif; ?>
