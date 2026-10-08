@@ -458,3 +458,8 @@ body, .is-root-container, .primary-font {
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+/* Gambar beranda tetap seragam walau ukuran foto asli berbeda */
+#velocity-home-slider img { aspect-ratio: 3 / 2; object-fit: cover; }
+.velocity-post-carousel img { aspect-ratio: 15 / 11; object-fit: cover; }
+.row-vd img { aspect-ratio: 3 / 2; object-fit: cover; }

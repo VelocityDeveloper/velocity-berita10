@@ -24,7 +24,7 @@ $container = velocitytheme_option('justg_container_type', 'container');
     <div class="row">
         <div class="col-12 pt-1">
             <div class="border shadow-sm bg-light mt-2">
-                <?php $carousel_home = velocitytheme_option('cat_carousel_home');
+                <?php $carousel_home = velocity_berita10_kategori('carousel_home');
                 velocity_post_carousel($carousel_home);?>
             </div>
         </div>
@@ -45,7 +45,7 @@ $container = velocitytheme_option('justg_container_type', 'container');
                                 $class = $no == 1 ? ' active' : '';
                                 $post_id = $post->ID;
                                 echo '<div class="text-center carousel-item'.$class.'">';
-                                    echo do_shortcode('[resize-thumbnail width="480" height="320" linked="true" class="w-100" post_id="'.$post_id.'"]');
+                                    echo do_shortcode('[resize-thumbnail width="480" height="320" linked="true" class="w-100" loading="eager" post_id="'.$post_id.'"]');
                                     echo '<div class="bg-white bg-opacity-75 position-absolute bottom-0 start-0 w-100">';
                                         echo '<a href="'.get_the_permalink($post_id).'" class="d-inline-block py-2 px-3 text-dark fw-bold">'.$post->post_title.'</a>';
                                     echo '</div>';
@@ -107,7 +107,7 @@ $container = velocitytheme_option('justg_container_type', 'container');
                         'showposts' => 10,
                         'post_type' => array('post'),
                     );
-                    $posts_left_home  = velocitytheme_option('cat_posts_left_home');
+                    $posts_left_home  = velocity_berita10_kategori('posts_left_home');
                     if(!empty($posts_left_home)){
                         $args_news['cat'] = $posts_left_home;
                     }
@@ -127,7 +127,7 @@ $container = velocitytheme_option('justg_container_type', 'container');
                         'showposts' => 6,
                         'post_type' => array('post'),
                     );
-                    $posts_middle_home1  = velocitytheme_option('cat_posts_middle_home1');
+                    $posts_middle_home1  = velocity_berita10_kategori('posts_middle_home1');
                     if(!empty($posts_middle_home1)){
                         $args1['cat'] = $posts_middle_home1;
                     }
@@ -161,7 +161,7 @@ $container = velocitytheme_option('justg_container_type', 'container');
                         'showposts' => 5,
                         'post_type' => array('post'),
                     );
-                    $posts_middle_home2  = velocitytheme_option('cat_posts_middle_home2');
+                    $posts_middle_home2  = velocity_berita10_kategori('posts_middle_home2');
                     if(!empty($posts_middle_home2)){
                         $args2['cat'] = $posts_middle_home2;
                     }
@@ -206,7 +206,7 @@ $container = velocitytheme_option('justg_container_type', 'container');
                 'showposts' => 4,
                 'post_type' => array('post'),
             );
-            $posts_footer_home1  = velocitytheme_option('cat_posts_footer_home1');
+            $posts_footer_home1  = velocity_berita10_kategori('posts_footer_home1');
             if(!empty($posts_footer_home1)){
                 $args_footer_home1['cat'] = $posts_footer_home1;
             }
@@ -225,7 +225,7 @@ $container = velocitytheme_option('justg_container_type', 'container');
                 'showposts' => 4,
                 'post_type' => array('post'),
             );
-            $posts_footer_home2  = velocitytheme_option('cat_posts_footer_home2');
+            $posts_footer_home2  = velocity_berita10_kategori('posts_footer_home2');
             if(!empty($posts_footer_home2)){
                 $args_footer_home2['cat'] = $posts_footer_home2;
             }
@@ -244,7 +244,7 @@ $container = velocitytheme_option('justg_container_type', 'container');
                 'showposts' => 4,
                 'post_type' => array('post'),
             );
-            $posts_footer_home3  = velocitytheme_option('cat_posts_footer_home3');
+            $posts_footer_home3  = velocity_berita10_kategori('posts_footer_home3');
             if(!empty($posts_footer_home3)){
                 $args_footer_home3['cat'] = $posts_footer_home3;
             }

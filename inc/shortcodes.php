@@ -19,6 +19,7 @@ function resize_thumbnail($atts) {
         'linked'   	=> 'true', ///return link to post	
         'class'   	=> 'w-100', ///return class name to img	
         'attachment' => 'true',
+        'loading'   => 'lazy', /// lazy or eager
         'post_id'   => $post->ID,
     ), $atts );
 
@@ -31,6 +32,7 @@ function resize_thumbnail($atts) {
     $linked        	= $atribut['linked'];
     $post_id        = $atribut['post_id'];
     $class        	= $atribut['class']?'class="'.$atribut['class'].'"':'';
+    $loading        = $atribut['loading'] === 'eager' ? 'eager' : 'lazy';
 	$urlimg			= get_the_post_thumbnail_url($post_id,'full');
 	
 	if(empty($urlimg) && $attach == 'true'){
@@ -52,7 +54,7 @@ function resize_thumbnail($atts) {
 			if($linked=='true'):
 				echo '<a href="'.get_the_permalink($post_id).'" title="'.get_the_title($post_id).'">';
 			endif;
-			echo '<img src="'.$urlresize.'" width="'.$width.'" height="'.$height.'" loading="lazy" '.$class.'>';
+			echo '<img src="'.esc_url($urlresize).'" width="'.$width.'" height="'.$height.'" loading="'.$loading.'" alt="'.esc_attr(get_the_title($post_id)).'" '.$class.'>';
 			if($linked=='true'):
 				echo '</a>';
 			endif;
